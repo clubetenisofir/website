@@ -1,0 +1,193 @@
+<?php
+// Iniciar a sessão para verificar se o cliente está logado
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+?><!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube de Ténis Ofir</title>
+    <link rel="icon" href="assets/Logo.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css?v=<?php echo filemtime('css/styles.css'); ?>">
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+    <!-- Adicionando ícones do Font Awesome para as redes sociais -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <?php include 'header.php'; ?>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>O teu clube de ténis em Ofir
+            <p>Desperta o tenista que há em ti</p></h2>
+            <p>Dispomos de aulas para todas as idades e níveis, com um professor experiente e instalações de qualidade.</p>
+            <a href="#contact" class="btn">Agendar uma aula experimental</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre o nosso clube</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>O Clube Ténis Ofir é um espaço dedicado à prática do ténis, ao bem-estar e ao convívio, proporcionando um ambiente acolhedor para atletas de todas as idades e níveis. Fundado em 2006 e sediado em Fão, é coordenado pelo Professor Igor Vale, contando com instalações modernas e dois campos de piso rápido com vista para o mar.</p>
+                    <p>O clube dispõe treinos individuais e em grupo, programas personalizados para crianças e adultos, bem como a organização de torneios e eventos ao longo do ano. Mais do que promover o desenvolvimento técnico dos jogadores, o nosso clube tem como missão formar pessoas através dos valores do desporto, incentivando o crescimento pessoal, o espírito de comunidade e o gosto pelo ténis.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/Imagem_2.jpg" alt="Clube de Ténis Ofir" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Serviços -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Aulas</h2>
+            <div class="services-grid"> 
+                <div class="service-card"
+                     data-title="Play and stay"
+                     data-image="assets/Play-Stay-Photo.jpg">
+                    <h3>Play and stay</h3>
+                    <div class="detailed-description" style="display:none;">
+                        O Play and Stay (conhecido em Portugal como Play+Stay) é uma metodologia inovadora de ensino do ténis lançada pela Federação Internacional de Ténis (ITF). O seu grande objetivo é fazer com que os alunos, sejam crianças ou adultos iniciantes, consigam servir, trocar bolas e marcar pontos logo na primeira aula.<br><br>
+                        O método baseia-se num lema simples: <strong>"Servir, Jogar e Pontuar"</strong>. Ao contrário do ensino tradicional (onde se passa meses a treinar a técnica de forma exaustiva antes de jogar), o Play and Stay adapta o campo, a raquete e a bola ao tamanho e à capacidade do aluno.<br><br>
+                        <strong>Como funciona?</strong><br>
+                        O programa utiliza uma progressão colorida que torna o processo muito mais fácil e divertido:<br><br>
+                        <strong>Fase 1 (Bola Vermelha - 3 a 8 anos/Iniciantes):</strong> Utiliza um campo reduzido (cerca de 11 metros) e uma bola maior que é 75% mais lenta do que a bola amarela oficial. A bola é mais leve e tem um salto mais baixo, permitindo controlar os golpes facilmente.<br><br>
+                        <strong>Fase 2 (Bola Laranja - 8 a 10 anos/Intermédios):</strong> Utiliza um campo intermédio (cerca de 18 metros) e uma bola que é 50% mais lenta que a oficial.<br><br>
+                        <strong>Fase 3 (Bola Verde - Até 10 anos/Avançados):</strong> Utiliza o campo de tamanho oficial, mas com uma bola 25% mais lenta que a amarela, dando tempo ao jogador para se posicionar e bater corretamente.
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Iniciação</h3>
+                    <div class="detailed-description" style="display:none;">Para quem nunca jogou ténis ou para quem tem pouca experiência e pretende iniciar a aprendizagem da modalidade. Aprendizagem dos fundamentos técnico táticos do jogo. Desenvolvimento da condição física.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Aperfeiçoamento</h3>
+                    <div class="detailed-description" style="display:none;">Para aqueles que têm experiência e pretendem melhorar as habilidades técnico táticas do jogo. Desenvolvimento da condição física.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Competição</h3>
+                    <div class="detailed-description" style="display:none;">Para quem pretende competir.<br>Desenvlovimento técnico tático e da condição física.<br></div>
+                </div>
+                <div class="service-card">
+                    <h3>Aulas particulares</h3>
+                    <div class="detailed-description" style="display:none;">Para quem pretende desenvolver um trabalho individualizado ou simplesmente jogar sozinho com um treinador.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outros Serviços -->
+    <section id="other-services" class="services">
+        <div class="container">
+            <h2 class="section-title">Outros Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Encordoamento</h3>
+                    <div class="detailed-description" style="display:none;">Dispomos de serviço de encordoamento de raquetes.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Fisioterapia</h3>
+                    <div class="detailed-description" style="display:none;">A Fisioterapia Desportiva é a opção adequada no aumento do rendimento desportivo, bem como na redução dos riscos de lesão associados. Desta forma, o nosso clube encaminha os seus atletas para uma clínica especializada em fisioterapia desportiva.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Ginásio / Personal Trainer</h3>
+                    <div class="detailed-description" style="display:none;">Desenvolvimento da condição física. Trabalho realizado por Personal Trainer em ginásio</div>
+                </div>
+                <div class="service-card">
+                    <h3>Nutrição</h3>
+                    <div class="detailed-description" style="display:none;">A nutrição desportiva é fundamental para quem pratica exercício físico. Torna-se então extremamente importante que haja um planejamento alimentar correto, dando particular importância aos momentos pré e pós-treino. Para os alunos que pretendam uma dieta alimentar especificamente direcionada para a modalidade, trabalhamos em parceria com profissionais de nutrição.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalhes do Serviço -->
+    <div id="serviceDetailModal" class="modal">
+        <div class="modal-content service-detail-modal-content">
+            <span class="close-modal" id="closeServiceModalBtn">&times;</span>
+            <img id="modalServiceImage" src="" alt="" class="modal-image">
+            <h3 id="modalServiceTitle"></h3>
+            <p id="modalServiceDescription"></p>
+            <div style="margin-top: 25px; text-align: center;">
+                <a href="#contact" class="btn" id="modalContactBtn">Entra em contacto</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Professor -->
+    <section id="coaches" class="coaches">
+        <div class="container">
+            <h2 class="section-title">Professor</h2>
+            <div class="coaches-grid">
+                <div class="coach-card">
+                    <div class="coach-image">
+                        <img src="assets/Imagem_4.jpg" alt="Professor Igor Vale">
+                    </div>
+                    <h3>Igor Vale</h3>
+                    <p>Curso de Treinador Nível I da Federação Portuguesa de Ténis</p>
+                    <p>Professor de Educação Física, (ESE-IPVC)</p>
+                    <p>Treinador na Escola de Ténis Igor Vale (Clube Ténis Ofir) desde 2006</p> 
+                    <p>Formador no SIPE (Sindicato Independente de Professores e Educadores)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Entra em Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informações de Contacto</h3>
+                    <p><strong>Endereço:</strong> Fão - Ofir, Esposende (Hotel Axis Ofir)</p>
+                    <p><strong>Telefone:</strong> +351 918 424 383</p>
+                    <p><strong>Email:</strong> clubetenisofir@gmail.com</p>
+                    <p><strong>Horário de Funcionamento:</strong><br>
+                    <b>Segunda a Sabado:</b> 9:00 - 21:00<br>
+                    <b>Domingos:</b> Apenas com hora marcada</p>
+                    <div class="mapa">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1215.5869016677345!2d-8.786122022244673!3d41.516704126693966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd244bce6284485d%3A0x6ff43c9b83790919!2sEscola%20de%20T%C3%A9nis%20Igor%20Vale!5e1!3m2!1spt-PT!2spt!4v1774284829644!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+                </div>
+            <form method="post"  id="contact_form" class="contact-form">
+                <h3>Entra em Contacto</h3>
+                <input type="text" id="name" name="name" placeholder="name" required>
+                <input type="email" id="email" name="email" placeholder="email" required>
+                <input type="tel" id="phone" name="phone" placeholder="Telefone">
+                <select id="lesson_type" name="lesson_type">
+                    <option disabled selected>Escolha a opção</option>
+                    <option>Agendar Aula</option>
+                    <option>Serviço de encordoamento</option>
+                </select>
+                <textarea id="message" name="message" placeholder="Mensagem (opcional)"></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <?php echo date('Y'); ?> Clube de Ténis Ofir. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/escoladetenisigorvale/" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/escolatenisigorvale/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
