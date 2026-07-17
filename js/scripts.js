@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (form && submitButton) { 
         form.addEventListener("submit", function (event) {
+
             event.preventDefault();
             
             submitButton.disabled = true;
